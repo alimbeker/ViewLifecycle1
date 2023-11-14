@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <declare-styleable name="ToolbarView">
+        <attr name="temp" format="integer"/>
+        <attr name="country" format="string"/>
+        <attr name="rain" format="enum">
+            <enum name="weak_rain" value="0" />
+            <enum name="weak_snow" value="1" />
+
+
+        </attr>
+    </declare-styleable>
+
+</resources>

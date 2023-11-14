@@ -20,6 +20,8 @@
 
     <com.example.viewlifecycle.ToolbarView
         android:id="@+id/toolbar"
+        app:temp="30"
+        app:rain="weak_rain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        />
