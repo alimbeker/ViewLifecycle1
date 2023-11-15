@@ -22,7 +22,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_margin="15dp"
+        app:windy="true"
+        app:daytime="day"
         app:country="Kazakhstan, Almaty"
         app:fallout="weak_snow"
         app:temp="16" />
@@ -32,9 +34,21 @@
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_margin="15dp"
+        app:windy="false"
+        app:daytime="night"
         app:country="Montreal, Canada"
-        app:fallout="weak_snow"
-        app:temp="30" />
+        app:fallout="weak_rain"
+        app:temp="25" />
 
+    <com.example.viewlifecycle.ToolbarView
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:windy="true"
+        app:daytime="day"
+        app:country="UK, London"
+        app:fallout="heavy_rain"
+        app:temp="18" />
 </LinearLayout>

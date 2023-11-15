@@ -18,23 +18,62 @@ class ToolbarView @JvmOverloads constructor(
          setAttrs(attrs,R.styleable.ToolbarView){
              binding.temp.text = "${it.getInt(R.styleable.ToolbarView_temp,10)}°"
              binding.country.text = it.getString(R.styleable.ToolbarView_country)
-
+             binding.windy.text = if(it.getBoolean(R.styleable.ToolbarView_windy,false)) {
+                 "Windy"
+             } else {
+                 "Sheltered"
+             }
 
              val weatherValue = it.getInt(R.styleable.ToolbarView_fallout, -1)
              val weatherEnum = getWeatherEnumByOrdinal(weatherValue)
              binding.fallout.text = weatherEnum?.displayName ?: "Unknown"
+
+
+             val daytimeValue = it.getInt(R.styleable.ToolbarView_daytime, -1)
+             val daytimeEnum = getDayTimeEnumByOrdinal(daytimeValue)
+             daytimeEnum?.imageId?.let {binding.daytime.setImageResource(it) }
 
          }
 
          setAttrs(attrs,R.styleable.ToolbarView){
              binding.temp.text = "${it.getInt(R.styleable.ToolbarView_temp,10)}°"
              binding.country.text = it.getString(R.styleable.ToolbarView_country)
-
+             binding.windy.text = if(it.getBoolean(R.styleable.ToolbarView_windy,false)) {
+                 "Windy"
+             } else {
+                 "Sheltered"
+             }
 
              val weatherValue = it.getInt(R.styleable.ToolbarView_fallout, -1)
              val weatherEnum = getWeatherEnumByOrdinal(weatherValue)
              binding.fallout.text = weatherEnum?.displayName ?: "Unknown"
 
+
+
+             val daytimeValue = it.getInt(R.styleable.ToolbarView_daytime, -1)
+             val daytimeEnum = getDayTimeEnumByOrdinal(daytimeValue)
+             daytimeEnum?.imageId?.let { binding.daytime.setImageResource(it) }
+         }
+
+
+         setAttrs(attrs,R.styleable.ToolbarView){
+             binding.temp.text = "${it.getInt(R.styleable.ToolbarView_temp,10)}°"
+             binding.country.text = it.getString(R.styleable.ToolbarView_country)
+             binding.windy.text = if(it.getBoolean(R.styleable.ToolbarView_windy,false)) {
+                 "Windy"
+             } else {
+                 "Sheltered"
+             }
+
+             val weatherValue = it.getInt(R.styleable.ToolbarView_fallout, -1)
+             val weatherEnum = getWeatherEnumByOrdinal(weatherValue)
+             binding.fallout.text = weatherEnum?.displayName ?: "Unknown"
+
+
+
+             val daytimeValue = it.getInt(R.styleable.ToolbarView_daytime, -1)
+             val daytimeEnum = getDayTimeEnumByOrdinal(daytimeValue)
+             daytimeEnum?.imageId?.let { binding.daytime.setImageResource(it) }
          }
      }
 }
@@ -61,4 +100,13 @@ enum class Fallout(val displayName: String) {
 }
 private fun getWeatherEnumByOrdinal(value: Int): Fallout? {
     return Fallout.values().firstOrNull { it.ordinal == value }
+}
+
+
+enum class DayTime(val imageId: Int) {
+    DAY(R.drawable.sun), NIGHT(R.drawable.moon_cloud)
+}
+
+private fun getDayTimeEnumByOrdinal(value: Int): DayTime? {
+    return DayTime.values().firstOrNull { it.ordinal == value }
 }
