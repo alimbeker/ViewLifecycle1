@@ -6,8 +6,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="33dp"
         android:layout_marginStart="25dp"
-        android:background="@drawable/trapezoid"
-       >
+        android:background="@drawable/rectangle"
+
+
+        >
         <TextView
             android:id="@+id/temp"
             android:layout_width="wrap_content"
@@ -19,6 +21,7 @@
             android:textColor="@color/white"
             />
         <ImageView
+            android:id="@+id/weather_image"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_gravity="right"
@@ -26,6 +29,7 @@
             android:src="@drawable/moon_cloud"
             />
         <TextView
+            android:id="@+id/country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="155dp"
@@ -36,6 +40,7 @@
             android:textColor="@color/white"
             />
         <TextView
+            android:id="@+id/fallout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -43,6 +48,7 @@
             android:layout_marginEnd="41dp"
             android:layout_marginBottom="12.5dp"
             android:text="Mid Rain"
+            android:textAllCaps="false"
             android:textSize="13sp"
             android:textColor="@color/white"
             />

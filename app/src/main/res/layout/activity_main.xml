@@ -20,12 +20,21 @@
 
     <com.example.viewlifecycle.ToolbarView
         android:id="@+id/toolbar"
-        app:temp="30"
-        app:rain="weak_rain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       />
+
+        app:country="Kazakhstan, Almaty"
+        app:fallout="weak_snow"
+        app:temp="16" />
 
 
+    <com.example.viewlifecycle.ToolbarView
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:country="Montreal, Canada"
+        app:fallout="weak_snow"
+        app:temp="30" />
 
 </LinearLayout>

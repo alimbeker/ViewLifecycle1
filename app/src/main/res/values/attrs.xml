@@ -4,12 +4,14 @@
     <declare-styleable name="ToolbarView">
         <attr name="temp" format="integer"/>
         <attr name="country" format="string"/>
-        <attr name="rain" format="enum">
+        <attr name="fallout" format="enum">
             <enum name="weak_rain" value="0" />
             <enum name="weak_snow" value="1" />
+            <enum name="hail" value="1" />
 
 
         </attr>
+
     </declare-styleable>
 
 </resources>

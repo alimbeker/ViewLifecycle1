@@ -16,7 +16,24 @@ class ToolbarView @JvmOverloads constructor(
         ViewToolbarBinding.inflate(LayoutInflater.from(context), this)
      init {
          setAttrs(attrs,R.styleable.ToolbarView){
-             binding.temp.text = "${it.getInt(R.styleable.ToolbarView_temp,10)}"
+             binding.temp.text = "${it.getInt(R.styleable.ToolbarView_temp,10)}°"
+             binding.country.text = it.getString(R.styleable.ToolbarView_country)
+
+
+             val weatherValue = it.getInt(R.styleable.ToolbarView_fallout, -1)
+             val weatherEnum = getWeatherEnumByOrdinal(weatherValue)
+             binding.fallout.text = weatherEnum?.displayName ?: "Unknown"
+
+         }
+
+         setAttrs(attrs,R.styleable.ToolbarView){
+             binding.temp.text = "${it.getInt(R.styleable.ToolbarView_temp,10)}°"
+             binding.country.text = it.getString(R.styleable.ToolbarView_country)
+
+
+             val weatherValue = it.getInt(R.styleable.ToolbarView_fallout, -1)
+             val weatherEnum = getWeatherEnumByOrdinal(weatherValue)
+             binding.fallout.text = weatherEnum?.displayName ?: "Unknown"
 
          }
      }
@@ -36,4 +53,12 @@ inline fun View.setAttrs(
             }
         }
 }
-
+enum class Fallout(val displayName: String) {
+    WEAK_RAIN("Weak rain"),
+    WEAK_SNOW("Weak snow"),
+    HEAVY_RAIN("Heavy rain"),
+    HEAVY_SNOW("Heavy snow")
+}
+private fun getWeatherEnumByOrdinal(value: Int): Fallout? {
+    return Fallout.values().firstOrNull { it.ordinal == value }
+}
