@@ -93,10 +93,10 @@ inline fun View.setAttrs(
         }
 }
 enum class Fallout(val displayName: String) {
-    WEAK_RAIN("Weak rain"),
-    WEAK_SNOW("Weak snow"),
-    HEAVY_RAIN("Heavy rain"),
-    HEAVY_SNOW("Heavy snow")
+    WEAK_RAIN("Weak Rain"),
+    WEAK_SNOW("Weak Snow"),
+    HEAVY_RAIN("Heavy Rain"),
+    HEAVY_SNOW("Heavy Snow")
 }
 private fun getWeatherEnumByOrdinal(value: Int): Fallout? {
     return Fallout.values().firstOrNull { it.ordinal == value }
